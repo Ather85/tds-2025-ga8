@@ -122,6 +122,21 @@ graph TD
         <p class="email">Contact: 24f1000999@ds.study.iitm.ac.in</p>
         <aside class="notes">Close with next steps and owners. Invite questions.</aside>
       </section>
+    <!-- Global footer visible on ALL slides -->
+<div id="email-footer">24f1000999@ds.study.iitm.ac.in</div>
+
+<style>
+  #email-footer {
+    position: fixed;
+    bottom: 12px;
+    right: 20px;
+    font-size: 0.9rem;
+    color: #444;
+    opacity: 0.85;
+    z-index: 999999; /* forces it above RevealJS */
+    pointer-events: none; /* avoids blocking clicks */
+  }
+</style>
 
     </div>
   </div>
