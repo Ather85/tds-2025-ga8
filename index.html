@@ -5,55 +5,66 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Quarterly Earnings — Interactive Report</title>
 
-  <!-- RevealJS core CSS + theme (CDN quick start) -->
+  <!-- RevealJS core CSS + theme -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/theme/white.css">
 
-  <!-- Mermaid (optional) -->
+  <!-- Syntax highlighting theme -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/highlight/monokai.css">
+
+  <!-- Mermaid -->
   <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
 
   <style>
-    /* small customizations */
     .chart { height: 360px; margin: 0 auto; width: 90%; }
     pre code.python { font-size: 0.9rem; }
-    .email { font-size: 0.85rem; opacity: 0.9; }
+
+    /* Global footer (on every slide) */
+    #global-email {
+      position: fixed;
+      bottom: 12px;
+      right: 20px;
+      font-size: 0.9rem;
+      opacity: 0.75;
+      color: #333;
+      z-index: 9999;
+      pointer-events: none;
+    }
   </style>
 </head>
+
 <body>
   <div class="reveal">
     <div class="slides">
 
-      <!-- Title slide (plain HTML) -->
+      <!-- Title Slide -->
       <section>
         <h1>Quarterly Earnings Report — Q3 2025</h1>
-        <h3>Interactive technical presentation</h3>
-        <p class="email">Contact: 24f1000999@ds.study.iitm.ac.in</p>
-        <aside class="notes">
-          Welcome. Briefly introduce yourself and mention data sources (internal finance systems).
-        </aside>
+        <h3>Interactive Technical Presentation</h3>
+        <p>Contact: <b>24f1000999@ds.study.iitm.ac.in</b></p>
       </section>
 
-      <!-- Markdown slide -->
+      <!-- Markdown Slide -->
       <section data-markdown>
-        <textarea data-template>
-## Executive Summary (Markdown slide)
+<textarea data-template>
+## Executive Summary
 
-Author: 24f1000999@ds.study.iitm.ac.in
-          
-- Revenue: **+8.4%** vs prior quarter
-- Net margin improved due to cost optimisation
-- Key risk: FX volatility in EMEA
+Author: **24f1000999@ds.study.iitm.ac.in**
+
+- Revenue: **+8.4%** vs prior quarter  
+- Net margin improved due to cost optimisation  
+- Key risk: FX volatility in EMEA  
 
 ---
-## Agenda
 
-1. Financial highlights
-2. Segment performance
-3. Risks & recommendations
-        </textarea>
+## Agenda
+1. Financial highlights  
+2. Segment performance  
+3. Risks & recommendations  
+</textarea>
       </section>
 
-      <!-- Fragmented / animated points -->
+      <!-- Fragment Slide -->
       <section>
         <h2>Key Financial Highlights</h2>
         <ul>
@@ -61,47 +72,39 @@ Author: 24f1000999@ds.study.iitm.ac.in
           <li class="fragment">Operating margin: **12.3%**</li>
           <li class="fragment fade-up">Adjusted EBITDA growth: **15% YoY**</li>
         </ul>
-        <aside class="notes">
-          Use fragments to reveal metrics one-by-one. Emphasize EBITDA drivers on the third reveal.
-        </aside>
       </section>
 
-      <!-- Code sample with syntax highlighting -->
+      <!-- Code Block -->
       <section>
-        <h2>Code: compute YoY growth</h2>
-        <pre><code class="python">import pandas as pd
+        <h2>Code: Compute YoY Growth</h2>
+        <pre><code class="language-python">
+import pandas as pd
 
 df = pd.read_csv("quarterly.csv", parse_dates=["date"])
 latest = df[df.date == "2025-09-30"]
 prior = df[df.date == "2024-09-30"]
+
 yoy_growth = (latest.revenue.values[0] - prior.revenue.values[0]) / prior.revenue.values[0] * 100
 print(f"YoY revenue growth: {yoy_growth:.1f}%")
-</code></pre>
-        <aside class="notes">
-          Show data provenance: which table / view the CSV comes from.
-        </aside>
+        </code></pre>
       </section>
 
-      <!-- Math / formula slide using MathJax (RevealMath plugin) -->
+      <!-- MathJax Slide -->
       <section>
         <h2>Financial Formula</h2>
-        <p>We define adjusted EBITDA margin as:</p>
         \[
-          \text{Adj. EBITDA Margin} = \frac{\text{EBITDA} - \text{Non-recurring items}}{\text{Revenue}} \times 100\%
+          \text{Adj. EBITDA Margin} = 
+          \frac{\text{EBITDA} - \text{Non-recurring items}}{\text{Revenue}} \times 100\%
         \]
-        <aside class="notes">
-          Explain how non-recurring items are identified and stripped from EBITDA.
-        </aside>
       </section>
 
-      <!-- Embedded interactive chart (Plotly) -->
-      <section id="plot-slide">
-        <h2>Revenue by Segment (interactive)</h2>
+      <!-- Plotly Interactive Chart -->
+      <section>
+        <h2>Revenue by Segment (Interactive)</h2>
         <div id="plotly" class="chart"></div>
-        <aside class="notes">Interact with legend to toggle segments. This is client-side Plotly — no server required.</aside>
       </section>
 
-      <!-- Mermaid diagram -->
+      <!-- Mermaid Diagram -->
       <section>
         <h2>Data Flow</h2>
         <div class="mermaid">
@@ -110,10 +113,9 @@ graph TD
   B --> C[Analytics DB]
   C --> D[Visualization & Reporting]
         </div>
-        <aside class="notes">Show quick diagram of pipeline and SLAs for data refresh.</aside>
       </section>
 
-      <!-- Closing -->
+      <!-- Closing Slide -->
       <section>
         <h2>Recommendations</h2>
         <ol>
@@ -121,76 +123,47 @@ graph TD
           <li class="fragment">Accelerate AR collection in APAC</li>
           <li class="fragment">Pilot pricing changes in top 3 verticals</li>
         </ol>
-        <p class="email">Contact: 24f1000999@ds.study.iitm.ac.in</p>
-        <aside class="notes">Close with next steps and owners. Invite questions.</aside>
+        <p>Contact: <b>24f1000999@ds.study.iitm.ac.in</b></p>
       </section>
-    <!-- Global footer visible on ALL slides -->
-<div id="email-footer">24f1000999@ds.study.iitm.ac.in</div>
-
-<style>
-  #email-footer {
-    position: fixed;
-    bottom: 12px;
-    right: 20px;
-    font-size: 0.9rem;
-    color: #444;
-    opacity: 0.85;
-    z-index: 999999; /* forces it above RevealJS */
-    pointer-events: none; /* avoids blocking clicks */
-  }
-</style>
 
     </div>
   </div>
 
-  <!-- Global footer (visible on all slides) -->
-<div id="global-email">
-  24f1000999@ds.study.iitm.ac.in
-</div>
+  <!-- Global ALWAYS-VISIBLE email footer -->
+  <div id="global-email">24f1000999@ds.study.iitm.ac.in</div>
 
-<style>
-  #global-email {
-    position: fixed;
-    bottom: 12px;
-    right: 20px;
-    font-size: 0.9rem;
-    opacity: 0.7;
-    z-index: 9999;
-  }
-</style>
-
-  
-  <!-- RevealJS + plugins (CDN) -->
+  <!-- RevealJS scripts -->
   <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/markdown/markdown.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/highlight/highlight.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/math/math.js"></script>
+
+  <!-- Plotly -->
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
   <script>
-    // Initialize Reveal
     Reveal.initialize({
       width: 1280,
       height: 720,
-      margin: 0.04,
+      margin: 0.05,
       controls: true,
       progress: true,
-      history: true,
       transition: 'slide',
       plugins: [ RevealMarkdown, RevealHighlight, RevealMath ]
     });
 
-    // Simple Plotly demo: replace with your real data
-    const plotData = [
-      { x: ['Q1','Q2','Q3'], y: [300, 360, 420], name: 'Retail', type: 'bar' },
-      { x: ['Q1','Q2','Q3'], y: [200, 210, 260], name: 'Enterprise', type: 'bar' },
-      { x: ['Q1','Q2','Q3'], y: [120, 140, 170], name: 'SMB', type: 'bar' }
-    ];
-    const layout = {barmode: 'stack', margin: {t:30}};
-    Plotly.newPlot('plotly', plotData, layout);
+    // Plotly chart
+    Plotly.newPlot("plotly", [
+      { x:['Q1','Q2','Q3'], y:[300,360,420], name:"Retail", type:"bar" },
+      { x:['Q1','Q2','Q3'], y:[200,210,260], name:"Enterprise", type:"bar" },
+      { x:['Q1','Q2','Q3'], y:[120,140,170], name:"SMB", type:"bar" }
+    ], {
+      barmode:"stack",
+      margin:{t:30}
+    });
 
-    // Mermaid init (if needed)
-    if (window.mermaid) mermaid.initialize({ startOnLoad:true });
+    // Mermaid init
+    if (window.mermaid) mermaid.initialize({ startOnLoad: true });
   </script>
 
 </body>
