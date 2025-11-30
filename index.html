@@ -1,197 +1,332 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Quarterly Earnings — Interactive Report</title>
-
-  <!-- RevealJS core CSS + theme (CDN quick start) -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/theme/white.css">
-
-  <!-- Mermaid -->
-  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
-
-  <style>
-    .chart { height: 360px; margin: 0 auto; width: 90%; }
-    pre code.python { font-size: 0.9rem; }
-    #global-email {
-      position: fixed;
-      bottom: 12px;
-      right: 20px;
-      font-size: 0.9rem;
-      opacity: 0.75;
-      z-index: 9999;
-      pointer-events: none;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q4 2025 Earnings Report</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/theme/black.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/plugin/highlight/monokai.min.css">
+    <style>
+        .reveal h1, .reveal h2, .reveal h3 {
+            text-transform: none;
+        }
+        .reveal .slides section .fragment.highlight-current-blue {
+            opacity: 1;
+            visibility: inherit;
+        }
+        .reveal .slides section .fragment.highlight-current-blue.current-fragment {
+            color: #42affa;
+        }
+        .email-footer {
+            position: fixed;
+            bottom: 10px;
+            right: 20px;
+            font-size: 0.5em;
+            color: #666;
+        }
+        .math-formula {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+    </style>
 </head>
-
 <body>
-  <!-- Global footer email (always visible) -->
-  <div id="global-email">24f1000999@ds.study.iitm.ac.in</div>
+    <div class="reveal">
+        <div class="slides">
+            <!-- Title Slide -->
+            <section data-markdown>
+                <textarea data-template>
+                    # Q4 2025 Earnings Report
+                    ## Financial Performance Review
+                    
+                    **Prepared by: Technical Consulting Team**
+                    
+                    Contact: 24f1000999@ds.study.iitm.ac.in
+                    
+                    ---
+                    
+                    ## Agenda
+                    
+                    - Executive Summary
+                    - Financial Metrics
+                    - Technical Analysis
+                    - Risk Assessment
+                    - Future Outlook
+                </textarea>
+            </section>
 
-  <div class="reveal">
-    <div class="slides">
+            <!-- Executive Summary with Fragments -->
+            <section>
+                <h2>Executive Summary</h2>
+                <div style="text-align: left; padding: 0 50px;">
+                    <p class="fragment fade-in-then-semi-out">Q4 2025 marked exceptional growth across all business units</p>
+                    <p class="fragment fade-in-then-semi-out">Revenue increased by <span class="fragment highlight-red">28%</span> year-over-year</p>
+                    <p class="fragment fade-in-then-semi-out">Net profit margin improved to <span class="fragment highlight-green">18.5%</span></p>
+                    <p class="fragment fade-in">Strategic investments in technology yielded significant returns</p>
+                </div>
+                <aside class="notes">
+                    Emphasize the strong performance across all metrics.
+                    Highlight the technology investments as a key driver.
+                    Be prepared to discuss the 28% revenue growth in detail.
+                </aside>
+            </section>
 
-      <!-- Title slide -->
-      <section>
-        <h1>Quarterly Earnings Report — Q3 2025</h1>
-        <h3>Interactive technical presentation</h3>
-        <p>Contact: 24f1000999@ds.study.iitm.ac.in</p>
-        <aside class="notes">
-          Introduce the presentation, context, and data sources used for this report.
-        </aside>
-      </section>
+            <!-- Financial Metrics -->
+            <section>
+                <h2>Key Financial Metrics</h2>
+                <table style="font-size: 0.8em;">
+                    <thead>
+                        <tr>
+                            <th>Metric</th>
+                            <th>Q4 2025</th>
+                            <th>Q4 2024</th>
+                            <th>Change</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="fragment">
+                            <td>Revenue</td>
+                            <td>$2.4B</td>
+                            <td>$1.9B</td>
+                            <td style="color: #42f545;">+28%</td>
+                        </tr>
+                        <tr class="fragment">
+                            <td>Operating Income</td>
+                            <td>$520M</td>
+                            <td>$380M</td>
+                            <td style="color: #42f545;">+37%</td>
+                        </tr>
+                        <tr class="fragment">
+                            <td>Net Income</td>
+                            <td>$445M</td>
+                            <td>$310M</td>
+                            <td style="color: #42f545;">+44%</td>
+                        </tr>
+                        <tr class="fragment">
+                            <td>EPS</td>
+                            <td>$3.82</td>
+                            <td>$2.68</td>
+                            <td style="color: #42f545;">+42%</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <aside class="notes">
+                    Walk through each metric slowly.
+                    Pause after revealing each row to let the numbers sink in.
+                    Prepare to answer questions about EPS calculations.
+                </aside>
+            </section>
 
-      <!-- Markdown slide -->
-      <section data-markdown>
-        <textarea data-template>
-## Executive Summary (Markdown slide)
+            <!-- Mathematical Formulas -->
+            <section>
+                <h2>Return on Equity Analysis</h2>
+                <div class="math-formula">
+                    <p>The DuPont Formula for ROE:</p>
+                    <p style="font-size: 1.2em; margin: 20px 0;">
+                        \[ ROE = \frac{Net\ Income}{Sales} \times \frac{Sales}{Assets} \times \frac{Assets}{Equity} \]
+                    </p>
+                    <p class="fragment" style="margin-top: 30px;">Our Q4 2025 ROE:</p>
+                    <p class="fragment" style="font-size: 1.2em;">
+                        \[ ROE = 18.5\% \times 1.8 \times 2.2 = 73.3\% \]
+                    </p>
+                </div>
+                <aside class="notes">
+                    Explain that this breaks down ROE into profitability, efficiency, and leverage.
+                    Our 73.3% ROE is exceptional and shows strong performance across all three components.
+                    Be ready to discuss each multiplier in detail.
+                </aside>
+            </section>
 
-Author: **24f1000999@ds.study.iitm.ac.in**
+            <!-- Risk Metrics with Formula -->
+            <section>
+                <h2>Risk-Adjusted Performance</h2>
+                <div class="math-formula">
+                    <p>Sharpe Ratio:</p>
+                    <p style="font-size: 1.2em;">
+                        \[ S = \frac{R_p - R_f}{\sigma_p} \]
+                    </p>
+                    <p class="fragment" style="margin-top: 20px;">Where:</p>
+                    <ul class="fragment" style="font-size: 0.8em; text-align: left;">
+                        <li>\(R_p\) = Portfolio Return (24.5%)</li>
+                        <li>\(R_f\) = Risk-Free Rate (4.2%)</li>
+                        <li>\(\sigma_p\) = Standard Deviation (12.8%)</li>
+                    </ul>
+                    <p class="fragment" style="font-size: 1.2em; margin-top: 20px; color: #42f545;">
+                        \[ S = \frac{24.5\% - 4.2\%}{12.8\%} = 1.59 \]
+                    </p>
+                </div>
+                <aside class="notes">
+                    A Sharpe ratio above 1.0 is considered good, above 2.0 is excellent.
+                    Our 1.59 indicates strong risk-adjusted returns.
+                    Emphasize that we're delivering returns efficiently relative to the risk taken.
+                </aside>
+            </section>
 
-- Revenue: **+8.4%** vs previous quarter  
-- Net margin improved due to cost optimisation  
-- Key risk: FX volatility in EMEA  
+            <!-- Code Sample: Python Analysis -->
+            <section>
+                <h2>Technical Implementation</h2>
+                <p>Automated Risk Analysis Pipeline</p>
+                <pre><code class="language-python" data-trim data-line-numbers="1-3|5-8|10-12">
+import numpy as np
+import pandas as pd
+from scipy import stats
 
----
+def calculate_var(returns, confidence=0.95):
+    """Calculate Value at Risk"""
+    var = np.percentile(returns, (1 - confidence) * 100)
+    return var
 
-## Agenda
+def stress_test_portfolio(portfolio, scenarios):
+    """Run stress tests on portfolio"""
+    results = []
+    for scenario in scenarios:
+        stressed_return = portfolio.apply_shock(scenario)
+        results.append({
+            'scenario': scenario.name,
+            'return': stressed_return,
+            'loss': portfolio.value - stressed_return
+        })
+    return pd.DataFrame(results)
 
-1. Financial highlights  
-2. Segment performance  
-3. Risks & recommendations  
-        </textarea>
-      </section>
+# Calculate 95% VaR
+portfolio_var = calculate_var(daily_returns, confidence=0.95)
+print(f"95% VaR: ${portfolio_var:,.2f}")
+                </code></pre>
+                <aside class="notes">
+                    This is our automated risk analysis system.
+                    Line 1-3: Import necessary libraries for quantitative analysis.
+                    Line 5-8: VaR calculation helps us understand potential losses.
+                    Line 10-12: Stress testing simulates extreme market conditions.
+                    Mention this runs daily and alerts the risk team automatically.
+                </aside>
+            </section>
 
-      <!-- Fragment slide -->
-      <section>
-        <h2>Key Financial Highlights</h2>
-        <ul>
-          <li class="fragment">Total revenue: **₹ 1,240 Cr**</li>
-          <li class="fragment">Operating margin: **12.3%**</li>
-          <li class="fragment fade-up">Adjusted EBITDA growth: **15% YoY**</li>
-        </ul>
-        <aside class="notes">
-          Explain the drivers of margin improvement and YoY EBITDA growth.
-        </aside>
-      </section>
+            <!-- Code Sample: SQL Query -->
+            <section>
+                <h2>Data Pipeline Architecture</h2>
+                <p>Real-time Revenue Aggregation</p>
+                <pre><code class="language-sql" data-trim data-line-numbers>
+WITH daily_revenue AS (
+    SELECT 
+        DATE(transaction_date) as date,
+        product_category,
+        SUM(amount) as daily_total,
+        COUNT(DISTINCT customer_id) as unique_customers
+    FROM transactions
+    WHERE transaction_date >= DATE_SUB(CURRENT_DATE(), INTERVAL 90 DAY)
+    GROUP BY DATE(transaction_date), product_category
+),
+moving_average AS (
+    SELECT
+        date,
+        product_category,
+        daily_total,
+        AVG(daily_total) OVER (
+            PARTITION BY product_category 
+            ORDER BY date 
+            ROWS BETWEEN 6 PRECEDING AND CURRENT ROW
+        ) as ma_7day
+    FROM daily_revenue
+)
+SELECT * FROM moving_average
+WHERE date >= DATE_SUB(CURRENT_DATE(), INTERVAL 30 DAY)
+ORDER BY date DESC, product_category;
+                </code></pre>
+                <aside class="notes">
+                    This query powers our revenue dashboard.
+                    It calculates 7-day moving averages by product category.
+                    Updates every hour to provide near real-time insights.
+                    The data warehouse processes 50M+ transactions daily.
+                </aside>
+            </section>
 
-      <!-- Code slide -->
-      <section>
-        <h2>Code: Compute YoY Growth</h2>
-        <pre><code class="python">import pandas as pd
+            <!-- Future Outlook -->
+            <section data-markdown>
+                <textarea data-template>
+                    ## 2026 Strategic Initiatives
+                    
+                    <div style="text-align: left;">
+                    
+                    1. **AI/ML Infrastructure** <!-- .element: class="fragment" -->
+                       - Expand predictive analytics capabilities
+                       - Deploy real-time fraud detection
+                    
+                    2. **Market Expansion** <!-- .element: class="fragment" -->
+                       - Launch in 3 new geographic markets
+                       - Target: $500M additional revenue
+                    
+                    3. **Digital Transformation** <!-- .element: class="fragment" -->
+                       - Mobile-first customer experience
+                       - API platform for partners
+                    
+                    </div>
+                </textarea>
+                <aside class="notes">
+                    These initiatives are already funded and in progress.
+                    AI/ML: Already hired a team of 25 data scientists.
+                    Market Expansion: Regulatory approvals in progress for 2 markets.
+                    Digital: Beta testing starts Q1 2026 with select customers.
+                </aside>
+            </section>
 
-df = pd.read_csv("quarterly.csv", parse_dates=["date"])
-latest = df[df.date == "2025-09-30"]
-prior = df[df.date == "2024-09-30"]
-
-yoy_growth = (
-    (latest.revenue.values[0] - prior.revenue.values[0])
-    / prior.revenue.values[0]
-) * 100
-
-print(f"YoY revenue growth: {yoy_growth:.1f}%")
-</code></pre>
-        <aside class="notes">
-          Demonstrate how YoY growth is calculated programmatically.
-        </aside>
-      </section>
-
-      <!-- Math slide -->
-      <section>
-        <h2>Financial Formula</h2>
-        <p>Adjusted EBITDA margin is defined as:</p>
-
-        \[
-        \text{Adj. EBITDA Margin} =
-        \frac{\text{EBITDA} - \text{Non-recurring items}}{\text{Revenue}} \times 100\%
-        \]
-
-        <aside class="notes">
-          Clarify treatment of non-recurring adjustments in EBITDA.
-        </aside>
-      </section>
-
-      <!-- Plotly slide -->
-      <section id="plot-slide">
-        <h2>Revenue by Segment (interactive)</h2>
-        <div id="plotly" class="chart"></div>
-        <aside class="notes">
-          Users can click segments in the legend to toggle visibility.
-        </aside>
-      </section>
-
-      <!-- Mermaid diagram -->
-      <section>
-        <h2>Data Flow</h2>
-        <div class="mermaid">
-graph TD
-  A[Data Warehouse] --> B[ETL]
-  B --> C[Analytics DB]
-  C --> D[Visualization & Reporting]
+            <!-- Closing Slide -->
+            <section>
+                <h2>Thank You</h2>
+                <h3>Questions & Discussion</h3>
+                <br>
+                <p style="font-size: 0.9em;">
+                    For detailed financials and supporting documentation:<br>
+                    <strong>24f1000999@ds.study.iitm.ac.in</strong>
+                </p>
+                <br>
+                <p style="font-size: 0.7em; color: #888;">
+                    This presentation contains forward-looking statements.<br>
+                    Actual results may differ materially.
+                </p>
+                <aside class="notes">
+                    Open the floor for questions.
+                    Have the detailed appendix ready if needed.
+                    Thank the stakeholders for their continued support.
+                </aside>
+            </section>
         </div>
-        <aside class="notes">
-          Diagram showing pipeline of data transformation stages.
-        </aside>
-      </section>
-
-      <!-- Recommendations slide -->
-      <section>
-        <h2>Recommendations</h2>
-        <ol>
-          <li class="fragment">Hedge FX exposure for EMEA receivables</li>
-          <li class="fragment">Accelerate AR collection in APAC</li>
-          <li class="fragment">Pilot pricing changes in top 3 verticals</li>
-        </ol>
-        <aside class="notes">
-          Highlight actionable business recommendations.
-        </aside>
-      </section>
-
-      <!-- ✔ Mandatory Speaker Notes Slide (for grader) -->
-      <section>
-        <h2>Speaker Notes Validation Slide</h2>
-        <p>This slide exists to satisfy the auto-grader.</p>
-        <aside class="notes">
-          These notes ensure the presentation meets the requirement for speaker notes.  
-          This section has valid RevealJS speaker notes and is placed as the last element inside the slide.
-        </aside>
-      </section>
-
+        
+        <div class="email-footer">24f1000999@ds.study.iitm.ac.in</div>
     </div>
-  </div>
 
-  <!-- RevealJS + plugins -->
-  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/markdown/markdown.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/highlight/highlight.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/math/math.js"></script>
-  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-
-  <script>
-    Reveal.initialize({
-      width: 1280,
-      height: 720,
-      margin: 0.04,
-      controls: true,
-      progress: true,
-      history: true,
-      transition: 'slide',
-      plugins: [RevealMarkdown, RevealHighlight, RevealMath]
-    });
-
-    // Plotly demo chart
-    const plotData = [
-      { x: ['Q1','Q2','Q3'], y: [300, 360, 420], name: 'Retail', type: 'bar' },
-      { x: ['Q1','Q2','Q3'], y: [200, 210, 260], name: 'Enterprise', type: 'bar' },
-      { x: ['Q1','Q2','Q3'], y: [120, 140, 170], name: 'SMB', type: 'bar' }
-    ];
-    Plotly.newPlot('plotly', plotData, {barmode:'stack', margin:{t:30}});
-
-    if (window.mermaid) mermaid.initialize({ startOnLoad: true });
-  </script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/plugin/markdown/markdown.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/plugin/highlight/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/plugin/notes/notes.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/plugin/math/math.min.js"></script>
+    
+    <script>
+        Reveal.initialize({
+            hash: true,
+            center: true,
+            transition: 'slide',
+            transitionSpeed: 'default',
+            backgroundTransition: 'fade',
+            plugins: [ 
+                RevealMarkdown, 
+                RevealHighlight, 
+                RevealNotes,
+                RevealMath.KaTeX
+            ],
+            math: {
+                mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+                config: 'TeX-AMS_HTML-full',
+                TeX: {
+                    Macros: {
+                        R: '\\mathbb{R}',
+                        set: [ '\\left\\{#1 \\; ; \\; #2\\right\\}', 2 ]
+                    }
+                }
+            }
+        });
+    </script>
 </body>
 </html>
